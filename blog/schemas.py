@@ -9,6 +9,9 @@ class BlogBase(BaseModel):
 class Blog(BlogBase):
     class Config():
         from_attributes = True
+        
+class BlogCreate(BlogBase):
+    user_id: int
 
 
 class User(BaseModel):

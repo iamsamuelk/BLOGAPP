@@ -1,14 +1,10 @@
 from fastapi import FastAPI
-import models
-from database import engine
+from . import models
+from .database import engine
 from routers import authentication, user, blog
 
 
 tags_metadata = [
-    {
-        "name": "Authentication",
-        "description": "The **login** logic is here.",
-    },
     {
         "name": "Users",
         "description": "Operations with users.",
@@ -16,6 +12,10 @@ tags_metadata = [
     {
          "name": "Blogs",
         "description": "Operations with blogs.",
+    },
+    {
+        "name": "Authentication",
+        "description": "The **login** logic is here.",
     }
 ]
 

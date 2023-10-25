@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends,status, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from typing import Annotated
-import models, JWTtoken
-from database import get_db
+from blog import models, JWTtoken
+from blog.database import get_db
 from sqlalchemy.orm import Session
-from hashing import Hash
+from blog.hashing import Hash
 
 
 
