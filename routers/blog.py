@@ -29,7 +29,7 @@ def show(id:int, db: Session = Depends(get_db), current_user: schemas.User = Dep
   
     
 @router.put('/{id}', status_code=status.HTTP_202_ACCEPTED)
-def update(id:int, request: schemas.Blog, db: Session = Depends(get_db), current_user: schemas.User = Depends(oauth2.get_current_user)):
+def update(id:int, request: schemas.BlogBase, db: Session = Depends(get_db), current_user: schemas.User = Depends(oauth2.get_current_user)):
     return blog.update(id, request, db)
 
 

@@ -1,5 +1,5 @@
 
-When the folder is dowmloaded to your machine, run through the following steps to view it
+When the folder is downloaded to your machine, run through the following steps to view it
 
 Install requirements
 - In terminal type "pip install -r requirements.txt"

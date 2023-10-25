@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List
+from datetime import datetime
 
 
 class BlogBase(BaseModel):
@@ -7,6 +8,8 @@ class BlogBase(BaseModel):
     body: str
     
 class Blog(BlogBase):
+    created_at: datetime
+    updated_at: datetime
     class Config():
         from_attributes = True
         
@@ -40,6 +43,8 @@ class ShowUser(BaseModel):
 class ShowBlog(BaseModel):
     title: str
     body: str
+    created_at: datetime
+    updated_at: datetime
     author: CreateUser
     class Config():
         from_attributes = True

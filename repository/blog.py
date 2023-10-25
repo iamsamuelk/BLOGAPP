@@ -1,6 +1,7 @@
 from fastapi import status, HTTPException
 from sqlalchemy.orm import Session
 from blog import schemas, models
+from datetime import datetime
 
 
 
@@ -10,7 +11,8 @@ def get_all(db : Session):
 
 
 def create(request: schemas.BlogCreate, db : Session):
-    new_blog = models.Blog(title=request.title, body=request.body, user_id=request.user_id)
+    current_time = datetime.now()
+    new_blog = models.Blog(title=request.title, body=request.body, user_id=request.user_id, created_at=current_time, updated_at= current_time)
     user = db.query(models.User).filter(models.User.id == request.user_id).first()
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail= f"User with the id {request.user_id} is not available")
@@ -27,11 +29,12 @@ def show(id:int, db: Session):
     return blog
 
 
-def update(id:int, request: schemas.Blog, db: Session):
+def update(id:int, request: schemas.BlogBase, db: Session):
+    current_time = datetime.now()
     blog = db.query(models.Blog).filter(models.Blog.id == id)
     if not blog.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Blog with id {id} not found")
-    blog.update({'title': request.title, 'body': request.body})
+    blog.update({'title': request.title, 'body': request.body, 'updated_at': current_time})
     db.commit()
     return 'updated'
 
