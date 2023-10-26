@@ -18,6 +18,8 @@ BLOGAPP is a simple backend based Blog App for creating, reading, updating, and 
 
 - **User Permissions**: Only the author of a blog post can edit or delete it.
 
+
+
 ## Technologies Used
 
 - **FastAPI**: The web framework for building the backend of the application.
@@ -28,9 +30,11 @@ BLOGAPP is a simple backend based Blog App for creating, reading, updating, and 
 
 - **JWT (JSON Web Tokens)**: Used for user authentication and authorization.
 
+
+
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/BLOGAPP.git`
+1. Clone the repository: `git clone https://github.com/iamsamuelk/BLOGAPP.git`
 
 2. Change directory to the project folder: `cd BLOGAPP`
 
@@ -40,6 +44,8 @@ BLOGAPP is a simple backend based Blog App for creating, reading, updating, and 
 
 5. Run the application: `uvicorn blog.main:app --reload`
 
+
+
 ## Usage
 
 1. Access the application in your web browser by visiting `http://localhost:8000`.
@@ -47,6 +53,8 @@ BLOGAPP is a simple backend based Blog App for creating, reading, updating, and 
 2. Create a user account and log in.
 
 3. Start creating, reading, updating, and deleting blog posts.
+
+
 
 
 ## Contributing
@@ -67,9 +75,13 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 
 Please ensure that your code follows the project's coding standards and conventions.
 
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use and modify this project for your purposes.
+
+
 
 ## Contact
 
